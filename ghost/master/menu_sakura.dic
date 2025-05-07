@@ -1,0 +1,458 @@
+OnSakuraMenu : all
+{
+	"\0\s[9]\b2\![set,autoscroll,disable]\_q"
+	
+	"%*\__q[OnAiTalk]Talk to me\__q"
+	if LastTalk != ""; "\n%*\__q[OnLastTalk]Say that again\__q"
+	"\n\n"
+	
+	"%*\__q[OnWhoAreYou]Who are you again?\__q\n"
+	"%*\__q[OnAreYouOkay]Are you okay?\__q\n" //this is based on a REAL QUESTION i have gotten. if you wouldn't say that don't ask it ... i just want to answer the people that would.
+	"%*\__q[OnHowOldAreYou]How old are you again?\__q\n"
+	"%*\__q[OnDoYouPlay]Do you play any word games?\__q\n"
+	"%*\__q[OnHowAreYou]How are you?\__q\n"
+	
+	"\n"
+	"%*\__q[OnSettings]Settings\__q\n"
+	"%*\__q[OnTalkRateMenu]Change talk rate\__q\n\n"
+	
+	"%*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnLastTalk
+{
+	LastTalk
+}
+
+OnWhoAreYou : all
+{
+	"\0\s[9]\_q\f[italic,1]\f[color,disable]Who are you again?\f[color,default]\f[italic,default]\_q\n\n[half]"
+	
+	"\p2\s[20]Weren't you already told?\w8\0\s[3]...I'm the main character, your blank slate.\w8\n\n\s[9]That's not what you wanted, is it?\w8\s[0]\n\n......Well, that's what you'll get."
+	
+	"\n\n\_q%*\__q[OnSakuraMenu]Back\__q  %*\__q[blank]Nevermind\__q\_q"
+}
+
+OnAreYouOkay : all
+{
+	"\0\s[9]\_q\f[italic,1]\f[color,disable]Are you okay?\f[color,default]\f[italic,default]\_q\n\n[half]"
+	
+	"\0\s[1]You're very forward with it.\w8\s[3]\n\nI'm fine, anyways.\w8\s[4]\n\nYou didn't have to ask."
+	
+	"\n\n\_q%*\__q[OnSakuraMenu]Back\__q  %*\__q[blank]Nevermind\__q\_q"
+}
+
+OnHowOldAreYou : all
+{
+	"\0\s[9]\_q\f[italic,1]\f[color,disable]How old are you again?\f[color,default]\f[italic,default]\_q\n\n[half]"
+	
+	"\0\s[8]How old do you think I am?\w8\s[9]\n\n[half]I'm not a kid, anyways. I get that a lot.\w8\s[0]\n\n[half]On the other hand, I'm still firmly in that 'young-adult' range where there's not actually any life experience to speak of but everyone thinks I know how to do things anyways.\n\s[4]It gets annoying.\w8\p2\s[20]Also still in that range where oversharing is acceptable, apparently.\0"
+	
+	"\n\n\_q%*\__q[OnSakuraMenu]Back\__q  %*\__q[blank]Nevermind\__q\_q"
+}
+
+OnDoYouPlay : all
+{
+	"\0\s[8]\_q\f[italic,1]\f[color,disable]Do you play any word games?\f[color,default]\f[italic,default]\_q\n\n[half]"
+	
+	"Me?\w9\w9\s[9] Not really.\w8\n\n[half]\s[3]I don't play games a lot in general.\w8\s[9] Those two will, though, if you ask."
+	
+	"\n\n\_q%*\__q[OnSakuraMenu]Back\__q  %*\__q[blank]Nevermind\__q\_q"
+}
+
+OnHowAreYou
+{
+	"\0\s[9]\_q\f[italic,1]\f[color,disable]How are you?\f[color,default]\f[italic,default]\_q\n\n[half]"
+	--
+	
+	"Huh?\w8\s[3] Um."
+	
+	"What?\w8\s[3]\n............"
+	
+	"\w8\s[3]............"
+	
+	--
+	"\n\n\_q%*\__q[OnSakuraMenu]Back\__q  %*\__q[blank]Nevermind\__q\_q"
+}
+
+OnTalkRateMenu : all
+{	
+	//This is just setting up a label, you may need to add to it or tweak it if you change what rates are available
+	_talkrate = "Off"
+	if aitalkinterval == 30; _talkrate = "30 seconds"
+	elseif aitalkinterval == 60; _talkrate = "1 minute"
+	elseif aitalkinterval == 180; _talkrate = "3 minutes"
+	elseif aitalkinterval == 300; _talkrate = "5 minutes"
+	elseif aitalkinterval == 600; _talkrate = "10 minutes"
+	
+	"\0\s[0]\b2\![set,autoscroll,disable]\_q"
+	"Current interval: %(_talkrate)\n\n"
+	
+	"%*\__q[OnTalkRateChange,0]Off\__q\n"
+	"%*\__q[OnTalkRateChange,30]30 seconds\__q\n"
+	"%*\__q[OnTalkRateChange,60]1 minute\__q\n"
+	"%*\__q[OnTalkRateChange,180]3 minutes\__q\n"
+	"%*\__q[OnTalkRateChange,300]5 minutes\__q\n"
+	"%*\__q[OnTalkRateChange,600]10 minutes\__q\n"
+	"\n"
+	"%*\__q[OnSakuraMenu]Back\__q  %*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnTalkRateChange
+{
+	aitalkinterval = TOINT(reference0)
+	OnTalkRateMenu
+}
+
+OnSettings : all
+{
+	"\0\s[0]\b2\![set,autoscroll,disable]\*\_q"
+	"You are:\n\f[color,default.anchorvisited]"
+	foreach names; _name //display with a space for readability
+	{
+		_num = ARRAYSIZE(names) -1
+		if _name == names[_num] //no trailing comma
+		{
+			_name
+		}
+		else
+		{
+			"%(_name), "
+		}
+	}
+	"\f[color,default]\n\n[half]"
+	if ARRAYSIZE(names) > 1
+	{
+		"%*\__q[OnChangeName,replaceName]Replace Name\__q\n"
+	}
+	else
+	{
+		"%*\__q[OnChangeName,changeName]Change Name\__q\n"
+	}
+	"%*\__q[OnDeleteName]Delete Name\__q\n"
+	"%*\__q[OnChangeName,addName]Add Name\__q\n"
+	"\n"
+	"Your pronouns are:\n\f[color,default.anchorvisited]"
+	foreach pronouns; _pronoun //same idea
+	{
+		_num = ARRAYSIZE(pronouns) -1
+		if _pronoun == pronouns[_num] //no trailing comma
+		{
+			"%(_pronoun[0,'/'])/%(_pronoun[1,'/'])"
+		}
+		else
+		{
+			"%(_pronoun[0,'/'])/%(_pronoun[1,'/']), "
+		}
+		//split in this case would likely add too much clutter
+	}
+	"\f[color,default]\n\n[half]"
+	if ARRAYSIZE(pronouns) > 1
+	{
+		"%*\__q[OnChangePronouns,replacePronouns]Replace Pronouns\__q\n"
+	}
+	else
+	{
+		"%*\__q[OnChangePronouns,changePronouns]Change Pronouns\__q\n"
+	}
+	//note that the above is mostly an aesthetic change. there's no real need to differentiate if you don't want to.
+	"%*\__q[OnDeletePronouns]Delete Pronouns\__q\n"
+	"%*\__q[OnChangePronouns,addPronouns]Add Pronouns\__q\n"
+	"\n"
+	"%*\__q[OnSakuraMenu]Back\__q  %*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnChangeName : all
+{
+	"\0\s[0]\*\_q"
+	if !reference2
+	{
+		"\![open,inputbox,OnChangeName,--reference=%(reference0)]"
+	}
+	if reference0 == "changeName" || reference0 == "replaceName"
+	{
+		"Enter your new name.\n"
+		if reference0 == "replaceName"
+		{
+			"(This will replace all existing names with the new name.)\n"
+		}
+	}
+	elseif reference0 == "addName"
+	{
+		"Enter your additional name.\n"
+	}
+	else {
+		if reference2 == "replaceName" || reference2 == "changeName"
+		{
+			names = reference0
+			"Your name is now \f[color,default.anchorvisited]%(username)\f[color,default].\n"
+		}
+		elseif reference2 == "addName"
+		{
+			if ASEARCH(reference0,names) != -1
+			{
+				"%(reference0) is already one of your names, and cannot be added again.\n"
+			}
+			else
+			{
+				names ,= reference0
+				"Your names now include \f[color,default.anchorvisited]%(reference0)\f[color,default].\n"
+			}
+		}
+	}
+	//reference
+	"\n"
+	"%*\__q[OnSettings]Back\__q  %*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnDeleteName : all
+{
+	"\0\s[0]\b2\*\_q\![set,autoscroll,disable]"
+	if reference0
+	{
+		if reference0 == names //if there's only one name
+		{
+			names = tempname
+			"You will no longer be called %(reference0).\nBecause that was your only name, for now you will be called %(tempname).\n\n[half]"
+		}
+		else {
+			_num = ASEARCH(reference0,names)
+			names[_num] = IARRAY
+			"You will no longer be called %(reference0).\n\n[half]"
+		}
+	}
+	"Select the name you wish to delete:\n\n"
+	foreach names; _name
+	{
+		"\__q[OnDeleteName,%(_name)]%(_name)\__q\n"
+	}
+	"\n"
+	"%*\__q[OnSettings]Back\__q  %*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+tempname
+{
+	//if the user deleted their name, or just hasn't changed it.
+	SHIORI3FW.UserName
+}
+
+username
+{
+	ANY(names)
+}
+
+//i will be honest the whole thing looks like a lot but it's really not very complicated just a lot of brackets. all hail SPLIT() savior of pronouns
+OnChangePronouns : all
+{
+	"\0\s[0]\*\_q"
+	if !reference2 && reference1 != "type em in" //this one's just for convenience. Let the user type if you don't want unnesecarry code!
+	{
+		"\b[2]\![set,autoscroll,disable]"
+		if reference0 == "changePronouns" || reference0 == "replacePronouns"
+		{
+			"Select your new pronouns.\n"
+			if reference0 == "replacePronouns"
+			{
+				"(This will replace all existing pronouns with the new pronouns.)\n"
+			}
+		}
+		elseif reference0 == "addPronouns"
+		{
+			"Select your additional pronouns.\n"
+		}
+		
+		foreach defPronouns; _pronoun
+		{
+			_temp = SPLIT(_pronoun,'/')
+			"\__q[OnChangePronouns,%(_pronoun),%(reference0),no]%(_temp[0])/%(_temp[1])\__q\n"
+			//it doesn't matter if they're plural or not since it's already in the base set. yippee!
+		}
+		"\n[half]Name only:\n"
+		foreach names; _name
+		{
+			_pronoun = "%(_name)/%(_name)/%(_name)s/%(_name)'s/%(_name)'s self"
+			"\__q[OnChangePronouns,%(_pronoun),%(reference0),no]%(_name)\__q\n"
+		}
+		"\n[half]%*\__q[OnChangePronouns,%(reference0),type em in]Type in pronouns instead\__q\n"
+	}
+	else
+	{
+		if !reference2 && reference1 == "type em in"
+		{
+			"\![open,inputbox,OnChangePronouns,--reference=%(reference0)]"
+		}
+		if reference0 == "changePronouns" || reference0 == "replacePronouns"
+		{
+			"Enter your new pronouns.\n"
+			if reference0 == "replacePronouns"
+			{
+				"(This will replace all existing pronouns with the new pronouns.)\n"
+			}
+			"Formatted as: \f[underline,1]they/them/their/theirs/themself\f[underline,default]\n"
+		}
+		elseif reference0 == "addPronouns"
+		{
+			"Enter your additional pronouns.\n"
+			"Formatted as: \f[underline,1]they/them/their/theirs/themself\f[underline,default]\n"
+		}
+		elseif reference2 == "replacePronouns" || reference2 == "changePronouns" || reference2 == "addPronouns" //i have brought hell upon myself
+		{
+			"%(reference0)\nAre these pronouns grammatically plural? (Example: 'they are' vs. 'she is')\n\n"
+			"%*\__q[OnChangePronouns,%(reference0),%(reference2),yes]Yes\__q    %*\__q[OnChangePronouns,%(reference0),%(reference2),no]No\__q"
+		}
+		else
+		{
+			if reference2 == "yes"; reference0 = "%(reference0)/plural"
+			
+			if reference1 == "replacePronouns" || reference1 == "changePronouns"
+			{
+				pronouns = reference0
+				"Your pronouns are now \f[color,default.anchorvisited]%(reference0)\f[color,default].\n"
+			}
+			elseif reference1 == "addPronouns"
+			{
+				if ASEARCH(reference0,pronouns) != -1
+				{
+					"%(reference0) is already in your pronouns, and cannot be added again."
+				}
+				else
+				{
+					pronouns ,= "%(reference0)"
+					"Your pronouns now include \f[color,default.anchorvisited]%(reference0)\f[color,default].\n"
+				}
+			}
+		}
+	}
+	//reference
+	"\n"
+	"%*\__q[OnSettings]Back\__q  %*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnDeletePronouns : all
+{
+	"\0\s[0]\b2\*\_q\![set,autoscroll,disable]"
+	if reference0
+	{
+		if reference0 == pronouns || ARRAYSIZE(pronouns) == 1
+		{
+			pronouns = tempnouns
+			"You will no longer be referred to by %(reference0[0,'/'])/%(reference0[1,'/']).\nBecause those were your only pronouns, for now you will be referred to by %(tempnouns[0,'/'])/%(tempnouns[1,'/']).\n\n[half]"
+		}
+		else {
+			_num = ASEARCH(reference0,pronouns)
+			pronouns[_num] = IARRAY
+			"You will no longer be referred to by %(reference0[0,'/'])/%(reference0[1,'/']).\n\n[half]"
+		}
+	}
+	"Select the pronouns you wish to delete:\n\n"
+	foreach pronouns; _pronoun
+	{
+		"\__q[OnDeletePronouns,%(_pronoun)]%(_pronoun)\__q\n"
+	}
+	"\n"
+	"%*\__q[OnSettings]Back\__q  %*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+tempnouns {
+	//incidentally i resent the implication that pronouns = gender but that is also why i implemented it this way. extra protection against being guessed...
+	if SHIORI3FW.UserSex == "male"; "he/him/his/his/himself"
+	elseif SHIORI3FW.UserSex == "female"; "she/her/her/hers/herself"
+	else; "they/them/their/theirs/themself/plural"
+}
+
+//plural information is added here. it's a set it and forget it kinda thing
+defPronouns : array
+{
+	"they/them/their/theirs/themself/plural"
+	"she/her/her/hers/herself"
+	"he/him/his/his/himself"
+	"ae/aer/aer/aers/aerself"
+	"ey/em/eir/eirs/emself"
+	"ze/hir/hir/hirs/hirself"
+	"it/it/its/its/itself"
+	"thon/thon/thons/thon's/thonself"
+	"one/one/one's/one's/onesself"
+}
+
+//—————————————————————————————— User pronoun related ——————————————————————————————
+
+they : all
+{
+	_pronoun = ANY(pronouns); _they = _pronoun[0,'/']
+	if _pronoun[5,'/'] == "plural"; pluralnouns = 1
+	else; pluralnouns = 0
+	//in theory this means that whatever pronoun was called most recently takes precedence. probably some crazy logging to be had, though!
+	//e: after testing it's .. pretty unreliable. putting : all on everything sorta helps, somehow, but it can't take variable switching while it's evaluating the text. I should've expected that!! Why do i not understand how basic programming works...
+	//if someone is code crawling and has a solution to help poor expiredshark out i would love that <3 people w/ multiple pronouns deserve more than half-baked inclusion..!
+	"%(_they)"
+}
+
+them : all
+{
+	_pronoun = ANY(pronouns); _them = _pronoun[1,'/']
+	if _pronoun[5,'/'] == "plural"; pluralnouns = 1
+	else; pluralnouns = 0
+	"%(_them)"
+}
+
+their : all
+{
+	_pronoun = ANY(pronouns); _their = _pronoun[2,'/']
+	if _pronoun[5,'/'] == "plural"; pluralnouns = 1
+	else; pluralnouns = 0
+	"%(_their)"
+}
+
+theirs : all
+{
+	_pronoun = ANY(pronouns); _theirs = _pronoun[3,'/']
+	if _pronoun[5,'/'] == "plural"; pluralnouns = 1
+	else; pluralnouns = 0
+	"%(_theirs)"
+}
+
+themself : all
+{
+	_pronoun = ANY(pronouns); _themself = _pronoun[3,'/']
+	if _pronoun[5,'/'] == "plural"; pluralnouns = 1
+	else; pluralnouns = 0
+	"%(_themself)"
+}
+
+//%(they) %(p('are','is'))
+//You can change the name of this function if you want! I kept it short so it's fast to type
+p : all
+{
+	
+	if pluralnouns == 1; _argv[0] //they are
+	else; _argv[1] //he is/she is
+}
+
+/*
+
+An example of the above setup:
+"%(they) %(p('were','was')) looking for that earlier, I'll ask if %(they)'%(p('ve','s')) found it."
+
+If using they, the %(p) functions will return the first word specified, resulting in:
+"they were looking for that earlier, I'll ask if they've found it."
+
+If not using they, for example if using she, it will return the second specified word instead, resulting in:
+"she was looking for that earlier, I'll ask if she's found it."
+
+With this function, you can quickly customize words that need to change based on whether it should be singular or plural. Just remember; the %(p) function is set up so that the first word you specify matches with the 'they' labels used on the pronoun functions. You can always switch that around if you like, too.
+
+*/
+
+/*pluraltest
+{
+	"%(they) %(p('were','was')) looking for that earlier, I'll ask if %(they)'%(p('ve','s')) found it." //taken wholesale from above.
+	"%(they) %(p('take','takes')) it home with %(them)"
+}*/
+//im losing my mind. WHY is it so inconsistent if it chooses based on the last available state that would be normal BUT if i put != up there it's the exact same!!! But there's no way to stop this behavior now that I've put the functionality in... I will be sad if it can't be fixed :(

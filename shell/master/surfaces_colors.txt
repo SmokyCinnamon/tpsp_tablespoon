@@ -1,0 +1,19 @@
+version,1
+
+//colors
+surface30
+{
+	element0,overlay,yellow.png,0,0
+}
+surface31
+{
+	element0,overlay,red.png,0,0
+}
+surface32
+{
+	element0,overlay,darkblue.png,0,0
+}
+surface33
+{
+	element0,overlay,deepblue.png,0,0
+}

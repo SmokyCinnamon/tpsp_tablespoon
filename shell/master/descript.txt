@@ -1,0 +1,150 @@
+charset,UTF-8
+type,shell
+
+name,default
+craftman,SmokyCinnamonRoll
+craftmanw,SmokyCinnamonRoll
+
+seriko.alignmenttodesktop,free
+seriko.use_self_alpha,1
+
+sakura.bindgroup2.name,socks,short - orange
+sakura.bindgroup2.default,0
+sakura.bindgroup3.name,socks,short - yellow
+sakura.bindgroup3.default,0
+sakura.bindgroup4.name,socks,short - red
+sakura.bindgroup4.default,0
+sakura.bindgroup5.name,socks,short - deep blue
+sakura.bindgroup5.default,0
+sakura.bindgroup6.name,socks,short - dark blue
+sakura.bindgroup6.default,0
+
+sakura.bindgroup7.name,socks,long - orange
+sakura.bindgroup7.default,0
+sakura.bindgroup8.name,socks,long - yellow
+sakura.bindgroup8.default,0
+sakura.bindgroup9.name,socks,long - red
+sakura.bindgroup9.default,0
+sakura.bindgroup10.name,socks,long - deep blue
+sakura.bindgroup10.default,0
+sakura.bindgroup11.name,socks,long - dark blue
+sakura.bindgroup11.default,0
+
+sakura.bindgroup12.name,shoes,orange
+sakura.bindgroup12.default,0
+sakura.bindgroup13.name,shoes,yellow
+sakura.bindgroup13.default,0
+sakura.bindgroup14.name,shoes,red
+sakura.bindgroup14.default,0
+sakura.bindgroup15.name,shoes,deep blue
+sakura.bindgroup15.default,0
+sakura.bindgroup16.name,shoes,dark blue
+sakura.bindgroup16.default,0
+
+sakura.bindgroup17.name,leg,shorts - orange
+sakura.bindgroup17.default,0
+sakura.bindgroup18.name,leg,shorts - yellow
+sakura.bindgroup18.default,0
+sakura.bindgroup19.name,leg,shorts - red
+sakura.bindgroup19.default,0
+sakura.bindgroup20.name,leg,shorts - deep blue
+sakura.bindgroup20.default,0
+sakura.bindgroup21.name,leg,shorts - dark blue
+sakura.bindgroup21.default,0
+
+sakura.bindgroup22.name,leg,pants - orange
+sakura.bindgroup22.default,0
+sakura.bindgroup23.name,leg,pants - yellow
+sakura.bindgroup23.default,0
+sakura.bindgroup24.name,leg,pants - red
+sakura.bindgroup24.default,0
+sakura.bindgroup25.name,leg,pants - deep blue
+sakura.bindgroup25.default,1
+sakura.bindgroup26.name,leg,pants - dark blue
+sakura.bindgroup26.default,0
+
+sakura.bindgroup27.name,shirt,shirt - orange
+sakura.bindgroup27.default,0
+sakura.bindgroup28.name,shirt,shirt - yellow
+sakura.bindgroup28.default,0
+sakura.bindgroup29.name,shirt,shirt - red
+sakura.bindgroup29.default,0
+sakura.bindgroup30.name,shirt,shirt - deep blue
+sakura.bindgroup30.default,0
+sakura.bindgroup31.name,shirt,shirt - dark blue
+sakura.bindgroup31.default,0
+
+sakura.bindgroup32.name,shirt,business - orange
+sakura.bindgroup32.default,0
+sakura.bindgroup33.name,shirt,business - yellow
+sakura.bindgroup33.default,0
+sakura.bindgroup34.name,shirt,business - red
+sakura.bindgroup34.default,1
+sakura.bindgroup35.name,shirt,business - deep blue
+sakura.bindgroup35.default,0
+sakura.bindgroup36.name,shirt,business - dark blue
+sakura.bindgroup36.default,0
+
+sakura.bindgroup37.name,hoodie,orange
+sakura.bindgroup37.default,0
+sakura.bindgroup38.name,hoodie,yellow
+sakura.bindgroup38.default,0
+sakura.bindgroup39.name,hoodie,red
+sakura.bindgroup39.default,0
+sakura.bindgroup40.name,hoodie,deep blue
+sakura.bindgroup40.default,0
+sakura.bindgroup41.name,hoodie,dark blue
+sakura.bindgroup41.default,0
+
+sakura.bindoption0.group,leg,mustselect
+
+sakura.menu,auto
+
+kero.bindgroup6.name,bow,blue
+kero.bindgroup6.default,0
+kero.bindgroup7.name,bow,pink
+kero.bindgroup7.default,0
+kero.bindgroup8.name,bow,red
+kero.bindgroup8.default,0
+kero.bindgroup9.name,bow,white
+kero.bindgroup9.default,0
+
+kero.bindgroup11.name,tail bow,blue
+kero.bindgroup11.default,0
+kero.bindgroup12.name,tail bow,pink
+kero.bindgroup12.default,0
+kero.bindgroup13.name,tail bow,red
+kero.bindgroup13.default,0
+kero.bindgroup14.name,tail bow,white
+kero.bindgroup14.default,0
+
+kero.bindgroup16.name,tie,blue
+kero.bindgroup16.default,0
+kero.bindgroup17.name,tie,pink
+kero.bindgroup17.default,0
+kero.bindgroup18.name,tie,red
+kero.bindgroup18.default,0
+kero.bindgroup19.name,tie,white
+kero.bindgroup19.default,0
+
+kero.menu,auto
+
+char2.bindgroup6.name,tail bow,green-ish
+char2.bindgroup6.default,0
+char2.bindgroup7.name,tail bow,pink
+char2.bindgroup7.default,0
+char2.bindgroup8.name,tail bow,white
+char2.bindgroup8.default,0
+char2.bindgroup9.name,tail bow,yellow
+char2.bindgroup9.default,0
+
+char2.bindgroup11.name,tie,green-ish
+char2.bindgroup11.default,0
+char2.bindgroup12.name,tie,pink
+char2.bindgroup12.default,0
+char2.bindgroup13.name,tie,white
+char2.bindgroup13.default,0
+char2.bindgroup14.name,tie,yellow
+char2.bindgroup14.default,0
+
+char2.menu,auto

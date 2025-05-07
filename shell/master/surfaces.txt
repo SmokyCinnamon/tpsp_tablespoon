@@ -1,0 +1,297 @@
+descript
+{
+	version,1
+}
+
+//—————————————————————————————— Sakura surfaces ——————————————————————————————
+
+surface0
+{
+	collision0,0,0,130,65,head
+	
+	//Example code for blink animation - uncomment if you want it
+	//animation0.interval,random,4
+	//animation0.pattern0,overlay,0,0,0,0
+	//animation0.pattern1,overlay,6,50,0,0
+	//animation0.pattern2,overlay,-1,150,0,0
+	
+	//the answer to life, the universe, and everything
+	//...and also why dressup options were layered under it, somehow.
+	animation42.interval,random,4
+	animation42.pattern0,replace,0,100,0,0
+	animation42.pattern1,replace,120,300,0,0
+	animation42.pattern2,replace,0,500,0,0
+	animation42.pattern3,replace,121,300,0,0
+	animation42.pattern4,replace,122,400,0,0
+	animation42.pattern5,replace,121,350,0,0
+	animation42.pattern6,replace,0,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+
+surface120
+{
+	element0,overlay,surface0_f2.png,0,0
+}
+surface121
+{
+	element0,overlay,surface0_f3.png,0,0
+}
+surface122
+{
+	element0,overlay,surface0_f4.png,0,0
+}
+
+surface1
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,1,100,0,0
+	animation42.pattern1,replace,123,300,0,0
+	animation42.pattern2,replace,1,500,0,0
+	animation42.pattern3,replace,124,300,0,0
+	animation42.pattern4,replace,125,400,0,0
+	animation42.pattern5,replace,124,350,0,0
+	animation42.pattern6,replace,1,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface123
+{
+	element0,overlay,surface1_f2.png,0,0
+}
+surface124
+{
+	element0,overlay,surface1_f3.png,0,0
+}
+surface125
+{
+	element0,overlay,surface1_f4.png,0,0
+}
+
+surface2
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,2,100,0,0
+	animation42.pattern1,replace,126,300,0,0
+	animation42.pattern2,replace,2,500,0,0
+	animation42.pattern3,replace,127,300,0,0
+	animation42.pattern4,replace,128,400,0,0
+	animation42.pattern5,replace,127,350,0,0
+	animation42.pattern6,replace,2,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface126
+{
+	element0,overlay,surface2_f2.png,0,0
+}
+surface127
+{
+	element0,overlay,surface2_f3.png,0,0
+}
+surface128
+{
+	element0,overlay,surface2_f4.png,0,0
+}
+
+surface3
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,3,100,0,0
+	animation42.pattern1,replace,129,300,0,0
+	animation42.pattern2,replace,3,500,0,0
+	animation42.pattern3,replace,130,300,0,0
+	animation42.pattern4,replace,131,400,0,0
+	animation42.pattern5,replace,130,350,0,0
+	animation42.pattern6,replace,3,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface129
+{
+	element0,overlay,surface3_f2.png,0,0
+}
+surface130
+{
+	element0,overlay,surface3_f3.png,0,0
+}
+surface131
+{
+	element0,overlay,surface3_f4.png,0,0
+}
+
+surface4
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,4,100,0,0
+	animation42.pattern1,replace,132,300,0,0
+	animation42.pattern2,replace,4,500,0,0
+	animation42.pattern3,replace,133,300,0,0
+	animation42.pattern4,replace,134,400,0,0
+	animation42.pattern5,replace,133,350,0,0
+	animation42.pattern6,replace,4,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface132
+{
+	element0,overlay,surface4_f2.png,0,0
+}
+surface133
+{
+	element0,overlay,surface4_f3.png,0,0
+}
+surface134
+{
+	element0,overlay,surface4_f4.png,0,0
+}
+
+surface5
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,5,100,0,0
+	animation42.pattern1,replace,135,300,0,0
+	animation42.pattern2,replace,5,500,0,0
+	animation42.pattern3,replace,136,300,0,0
+	animation42.pattern4,replace,137,400,0,0
+	animation42.pattern5,replace,136,350,0,0
+	animation42.pattern6,replace,5,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface135
+{
+	element0,overlay,surface5_f2.png,0,0
+}
+surface136
+{
+	element0,overlay,surface5_f3.png,0,0
+}
+surface137
+{
+	element0,overlay,surface5_f4.png,0,0
+}
+
+surface6
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,6,100,0,0
+	animation42.pattern1,replace,138,300,0,0
+	animation42.pattern2,replace,6,500,0,0
+	animation42.pattern3,replace,139,300,0,0
+	animation42.pattern4,replace,140,400,0,0
+	animation42.pattern5,replace,139,350,0,0
+	animation42.pattern6,replace,6,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface138
+{
+	element0,overlay,surface6_f2.png,0,0
+}
+surface139
+{
+	element0,overlay,surface6_f3.png,0,0
+}
+surface140
+{
+	element0,overlay,surface6_f4.png,0,0
+}
+
+surface7
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,7,100,0,0
+	animation42.pattern1,replace,141,300,0,0
+	animation42.pattern2,replace,7,500,0,0
+	animation42.pattern3,replace,142,300,0,0
+	animation42.pattern4,replace,143,400,0,0
+	animation42.pattern5,replace,142,350,0,0
+	animation42.pattern6,replace,7,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface141
+{
+	element0,overlay,surface7_f2.png,0,0
+}
+surface142
+{
+	element0,overlay,surface7_f3.png,0,0
+}
+surface143
+{
+	element0,overlay,surface7_f4.png,0,0
+}
+
+surface8
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,8,100,0,0
+	animation42.pattern1,replace,144,300,0,0
+	animation42.pattern2,replace,8,500,0,0
+	animation42.pattern3,replace,145,300,0,0
+	animation42.pattern4,replace,146,400,0,0
+	animation42.pattern5,replace,145,350,0,0
+	animation42.pattern6,replace,8,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface144
+{
+	element0,overlay,surface8_f2.png,0,0
+}
+surface145
+{
+	element0,overlay,surface8_f3.png,0,0
+}
+surface146
+{
+	element0,overlay,surface8_f4.png,0,0
+}
+
+surface9
+{
+	animation42.interval,random,4
+	animation42.pattern0,overlay,9,100,0,0
+	animation42.pattern1,replace,147,300,0,0
+	animation42.pattern2,replace,9,500,0,0
+	animation42.pattern3,replace,148,300,0,0
+	animation42.pattern4,replace,149,400,0,0
+	animation42.pattern5,replace,148,350,0,0
+	animation42.pattern6,replace,9,400,0,0
+	animation42.pattern7,alternativestart,(42,1)
+
+	animation1.interval,never
+	animation1.pattern0,stop,42
+}
+surface147
+{
+	element0,overlay,surface9_f2.png,0,0
+}
+surface148
+{
+	element0,overlay,surface9_f3.png,0,0
+}
+surface149
+{
+	element0,overlay,surface9_f4.png,0,0
+}

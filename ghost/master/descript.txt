@@ -1,0 +1,18 @@
+charset,UTF-8
+
+name,The perpetual shipwreck of a poet
+//name,The past in our hands
+type,ghost
+
+shiori,yaya.dll
+
+craftman,SmokyCinnamonRoll
+craftmanw,SmokyCinnamonRoll
+
+sakura.name,Just nobody
+kero.name,Normie
+
+icon,icon.ico
+balloon,Sailors Warning
+
+sstp.allowunspecifiedsend,0

@@ -1,0 +1,126 @@
+P2MenuGreetings
+{
+	"Yes?"
+	"What is it?"
+	"I will not do any magic tricks."
+	"Did you \f[italic,1]want\f[italic,default] something?"
+	"What?"
+}
+
+OnP2Menu : all
+{
+	"\p2\b2\![set,autoscroll,disable]"
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; P2MenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
+	"\n\n\_q"
+	//"Aitalk:%OUTPUTNUM('RandomTalk')\n"
+	//"Boot:%OUTPUTNUM('OnBoot')\n"
+	//"Close:%OUTPUTNUM('OnClose')\n"
+	
+	"%*\__q[OnMagicTrick]Can you do a magic trick?\__q\n"
+	"%*\__q[OnP2WordGuess]I want to play the guessing game\__q\n"
+	"%*\__q[OnDoAMagic]Can you do magic?\__q\n"
+	_name = "%(unicornnames)"
+	"%*\__q[OnYouLookLike,%(_name)]You look like your name is %(_name).\__q\n"
+	"%*\__q[OnDramaticReading]Can you a dramatic reading?\__q\n"
+	
+	"\n[half]%*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnMagicTrick
+{
+	"\p2\_q\f[italic,1]\f[color,disable]Can you do a magic trick?\f[color,default]\f[italic,default]\n\n[half]\_q"; --
+	"\p2\s[20]No!!!"
+	"\p2\s[20]Absolutely not!"
+	"\p2\s[20]I do not do 'magic' 'tricks'!!!"
+	--
+	"\_q\n\n[half]%*\__q[OnP2Menu]Back to main menu\__q\n%*\__q[blank]Nevermind\__q"
+}
+
+OnP2WordGuess : all
+{
+	if !reference
+	{
+		_rightword = "%(uniwords)"
+		_words = ("%(_rightword)","%(uniwords)")
+		while _words[0] == _words[1]
+		{
+			_words[1] = "%(uniwords)"
+		}
+		_words = ASORT('string,ascending',_words)
+		"\p2\s[20]\b2\*As if there's only the one...\nWell, this should be easy. Guess which word I am \f[italic,1]not\f[italic,default] thinking of:\n\n"
+		"\_q"
+		foreach _words; _word
+		{
+			if _word != _rightword
+			{
+				"\f[color,default.anchornotselect]%*\__q[OnP2WordGuess,%(_word),%(_rightword)]%(_word)\__q\f[color,default]\n"
+			}
+			else
+			{
+				"\f[color,default.anchorvisited]%*\__q[OnP2WordGuess,%(_word),%(_rightword)]%(_word)\__q\f[color,default]\n"
+			}
+		}
+		"\_q"
+	}
+	elseif reference0 != reference1
+	{
+		"\p2\s[20]\b2That's right. I wasn't thinking of %(reference0), so you win.\n(I \f[italic,1]was\f[italic,default] thinking of %(reference1), however.)\n\n[half]"
+		"\_q%*\__q[OnP2WordGuess]Play again\__q\_q"
+	}
+	else
+	{
+		"\p2\s[20]\b2%(reference1)?\nThat's not how the game works. You have to guess which word I'm \f[italic,1]not\f[italic,default] thinking of. You'll get it eventually.\n\n[half]"
+		"\_q%*\__q[OnP2WordGuess]Play again\__q\_q"
+	}
+	"\n\_q%*\__q[OnP2Menu]Back to main menu\__q\n%*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnDoAMagic
+{
+	"\p2\f[italic,1]\f[color,disable]\_qCan you do magic?\_q\f[color,default]\f[italic,default]\n\n[half]"
+	--
+	"Easily. Watch this: \f[color,default.anchor]magic\f[color,default]."
+	
+	"When asked nicely."
+	
+	"On select occasions. \f[color,default.anchor]Like this\f[color,default]."
+	
+	"\b[2]My powers are reliant on the \f[color,default.anchor]phase\f[color,default] of the \f[color,default.anchor]moon\f[color,default].\w8\n\n[half]...That was sarcasm, in case you didn't catch it. Or what some would call a 'joke'."
+	--
+	"\_q\n\n[half]%*\__q[OnP2Menu]Back to main menu\__q\n%*\__q[blank]Nevermind\__q\_q"
+}
+
+OnYouLookLike
+{
+	"\p2\b2\f[italic,1]\f[color,disable]\_qYou look like your name is %(reference0).\_q\f[color,default]\f[italic,default]\n\n[half]"
+	--
+	"Ok. Why."
+	
+	"That's not a compliment."
+	
+	"No I do not."
+	
+	"I look like a unicorn. That's all. Unicorns do not have such names."
+	
+	"I refuse to tolerate such assumptions."
+	--
+	if reference0 == "lonce" || reference0 == "lonse"; "\1\s[10]%(reference0) the honse...\naloha %(reference0)...\n%(reference0) the honse...\ndonse donse donse\p2"; --
+	"\_q\n\n%*\__q[OnP2Menu]Back to main menu\__q\n%*\__q[blank]Nevermind\__q\_q"
+}
+
+OnDramaticReading
+{
+	"\p2\f[italic,1]\f[color,disable]\_qCan you do a dramatic reading?\_q\f[color,default]\f[italic,default]\n\n[half]"
+	--
+	"Right now? No."
+	
+	"Not on the spot."
+	
+	"You'll have better results if you don't ask."
+	
+	"\b2Reach into the depths of my mind and create something?\w8\nWhat kind of unicorn do you think I \f[italic,1]am?\f[italic,default]"
+	--
+	"\_q\n\n[half]%*\__q[OnP2Menu]Back to main menu\__q\n%*\__q[blank]Nevermind\__q\_q"
+}

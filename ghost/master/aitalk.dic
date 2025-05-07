@@ -1,0 +1,153 @@
+OnAiTalk
+{
+	if CHAIN.IDName == ""
+	{
+		LastTalk = RandomTalk
+	}
+	else
+	{
+		LastTalk = ChainTalk
+	}
+	LastTalk
+}
+
+RandomTalk : nonoverlap_pool
+{
+	"\0\s[9]Oh, you can play with them, if you're bored, by the way. They don't mind.\w8\p2\f[italic,1]I\f[default] mind."
+	
+	
+	"\0\s[8]\1\s[10]%(username)! What kind of games do you like to play?\w8\0\s[1]\p2Don't ask things like that. What if %(username) hates games?\w8\0\s[8]\1\n\n...Well, what do you like to do for fun, then?\w8\0\s[4]\p2\n\nMaybe %(username) doesn't like to do anything! Stop asking questions!"
+	
+	"\0\s[0]\1\s[10]%(username)! Rock paper scissors?!\n\n\*\__q[OnRps,rock]rock\__q\n\__q[OnRps,paper]paper\__q\n\__q[OnRps,scissors]scissors\__q"
+	
+	"\0\s[8]\p2\s[20]Shouldn't you be busy, anyways, %(username)?\w8\n\n\0\s[1]\p2Well, it doesn't matter. I don't care."
+	
+	"\0\s[8]\1\s[10]%(username)! Did you hear we're going out to eat later?!\w8\0\s[4]\p2\f[italic,1]We\f[italic,0] are not going. You can though since everyone else probably already is.\w8\0\s[0]\1\s[10]\n\nOh... I thought we were invited!\w8\p2\n\nThat is indeed a true statement."
+	
+	"\0\s[0]\p2\s[20]I'm hungry. Don't you eat oats or whatever?\w8\1\s[10]When I get them! I don't have any to share right now...\w8\p2\n\nOh. Well nevermind then.\n... \f[height,-2]The one time I ask\f[height,default]..."
+	
+	"\0\s[0]\p2\s[20]I'm bored. This is a boring place.\w8\1\s[10]Aw, don't say that! There's tons of stuff to do!\w8\0\s[7]\p2\s[20]\n\nTalk to me when you have an example."
+	
+	"\0\s[5]...your heart in my hands..."
+	
+	"\0\s[9]......Sometimes you need a week-long breakdown. It resets the mind.\w8\s[0]\1\s[10]I do NOT think that's true!\w8\p2\s[20]yeah I will agree with you on this one."
+	
+	"\1\s[10]%(username)! %(username)! %(username)!\w8\0\s[7]\p2\s[20]You don't need to shout at %(username). In fact you don't need to say a name that many times to get ANYONE'S attention.\w8\0\s[5]\1\n\nI just like saying it.\n\f[height,-2]%(username)! %(username)! %(username)!\f[height,default]\w8\0\s[7]\p2\s[20]\n\nsigh..." //at this rate I DO need to code in the pronouns menu. Eesh.
+	
+	"\0\s[9]...\w9\w9\w9\w9\w9\w9\s[0]"
+	
+	"\1\s[10]%(username)!\w9\w9\w9\p[2]\s[20]Yes...?\w8\1\s[10]\n\nI forgot!\w8\p2\n\nOf course..."
+	
+	"\1\s[10]%(username)!\w9\w9\w9\p[2]\s[20]Well?\w8\1\s[10]\n\nI forgot!\w8\p2\n\nWas it about %(normiewords)?\w8\1\n\nHmm... maybe! But maybe it was %(normiewords) instead. Or %(normiewords)?"
+	
+	"\0\s[8]\p[2]\s[20]Do you mean it diegetically?\w8\1\s[10]Or metaphorically?\w8\0\s[6]......"
+	
+	"\0\s[2]\p2\s[20]A lot of people ask me if I do magic tricks. I don't! What a rude question!\w8\0\s[8]\1\s[10]But \f[italic,1]do\f[italic,default] you?\w8\0\s[4]\p2\s[20]\n\nNo!!!"
+	
+	"\p2\s[20]They don't keep a lot of games out. It means we have to resort to \f[italic,1]wordplay\f[italic,default].\w8\1\s[10]I love wordplay!\w8\p2\n\nYou'll love anything. Like %(normiewords).\w8\1\n\nGASP! That's one of my favorite things!!! How did you know?!\w8\p2\n\nCase in point."
+	
+	"\p2\s[20]I wish they'd let us play music. It's so boring otherwise.\w8\1\s[10]Yeah! The world needs to know all our favorite bands!\w8\p2\s[20]\n\nI take that back."
+	
+	"\0\s[0]I killed you last week\nThe waves in your hair,\nOn the beach, but it could've been anywhere\n\nYou didn't complain\n......\w8\1\s[10]Maybe if you went for something happy instead? like the concept of %(normiewords)!\w8\p2\s[20]Actually I think that would be worse. Don't do that."
+	
+	//"\0\s[9]I'm going to dayton soon. Have you been there?\w8\p2\s[20]It's probably better not to ask. Maybe %(username) hates dayton, ohio with a burning passion - how would you ever know?\w8\1\s[10]Dayton is really far away! We're going on a big bus!\w8\p2\n\nI think that's for scholastic guards and like, people with a budget."
+	//?
+	//upd we ARE going in a van i'm so excited
+	
+	"\0\s[9]The clock won't start if you don't make it\nBut everyone has had enough of waiting\n...\w8\0\s[0]\1\s[10]Tell them to be more patient!"
+	
+	"\p2\s[20]We brought a deck of cards, if you want to play solitaire.\w8\1\s[10]But then I couldn't play with you! Let's do something other than solitaire, %(username)!"
+	
+	"\0\s[0]Hm ...\nI don't live to make excuses.\w8\p2\s[20]It's a good start. What can rhyme with excuses?\w8\1\s[10]Oo! Oo! Pick me! I know this!\w8\p2\n\nI don't-\w8\1\n\nIt's mooses! You can use mooses!\w8\p2\n\nMoose is a mass noun.\w8\0\s[3]\n\nShould look that up. It might not be. Meese is also in circulation."
+	
+	"\0\s[0]Your home fell down\nWe all watched it\nEmpty sound\n\n[half]We all saw it\nNo cause found\w8\p2\s[20]You get too stuck on repetition. Try changing it up now and then.\w8\0\s[4]\1\s[10]But a lot of things repeat! Like cycles. In washing machines.\w8\0\s[3]\p2\n\nIt also makes people sick of hearing the same thing. You ever listened to a metronome? Tenth circle of hell.\w8\0\s[7]\1\n\nHow many circles of hell \f[italic,1]are\f[italic,default] there?"
+	
+	"\0\s[0]I saw you, there\nwhere the sun meets the sky\n\w8...\w9\w9\w9\p2\s[20]It's good to keep a through-line, but I think we've done this one enough times. Revisiting a concept works better the more experience you have, and all the more so if it's a \f[italic,1]good\f[italic,default] concept."
+	
+	//"\0\s[5]We're going to dayton~ We're all going to dayton~\w8\s[3]\n\n[half]...I hope it goes well." //THE ONLY THING ON MY MIND [REDACTED] COMP GET FUCKED WE'RE GONNA BE SO GOOD
+	
+	"\0\s[9]Have you ever seen an eclipse? I have, I think, but I don't really remember it.\w8\s[0]\nThat's okay. Solar events are hard to see, so I don't mind missing out on them."
+	
+	"\0\s[9]Don't tell anyone, but I get stuck a lot. It's hard when you want to do something, but can't get yourself to actually do it.\w8\s[8]\n\n[half]Does that happen to you, too?\w8\s[0] ...It's fine if you don't have an answer. I don't get it, either."
+	
+	"\0\s[3]I say fall is my favorite time of year, but then I thought it was actually spring.\w8\n\n[half]\s[0]Really though I think it's just that little transitional period between spring and summer or summer and fall. The weather only sort of sucks and the temperature is livable.\w8\n\n[half]\s[9]Also, mosquitos can't hurt you. I hate them."
+	
+	"\0\s[9]I'm supposed to get a job, but nobody really wants to hire me. I could get an interview no problem, but after that...\w8\s[4]\n\n[half]Well, it's obvious, isn't it?\w8\0\s[2]\1\s[10]Also it's actually because-\w8\0\s[1]\p2\s[20]Do not. Say it."
+	
+	"\0\s[9]I don't really like the rain, now. I think I used to, but moreso in summer. And in summer it just gets humid...\w8\0\s[0]\1\s[10]In summer you get to go to the pool!\w8\p2\s[20]Don't make generalizations like that. There's every chance %(username) doesn't even \f[italic,1]have\f[italic,default] a pool to go to, let alone likes to swim.\w8\1\s[10]\n\nWell, %(username) can always just take a spin in the washing machine, then! That's fun, too!\w8\0\s[4]\p2\s[20]\n\nWe're not even supposed to go in washing machines. It'll mess with your stuffing."
+	
+	"\1\s[10]%(username)! I want to go on an adventure. Can you take me somewhere cool?\w8\p2\s[20]Wherever %(they) %p('take','takes') you, you probably won't like it, or you'll get bored in record time.\w8\0\s[3]...You have to stay with me.\w8\1\s[10]\n\nAw... well, maybe later then %(username)! Or we could all go!\w8\p2\s[20]\n\nI have never hated an idea of yours more."
+	
+	"\0\s[9]Have you heard about theory of mind, %(username)?\w8\s[3]\nIt's basically like, the knowledge that other people have their own lives. Is how I remember it, anyways.\w8\p2\s[20]You should look it up and come back to tell us how wrong we are about it.\w8\0\s[9]\nI get it, but sometimes it's weird. Like, I know you're real, but sometimes it feels like I'm in a glass tank and everyone else just... isn't.\w8\n\s[3]......\w8\n\s[0]Maybe that's too metaphorical. I dunno." //different concept than theory of mind, i suspect...
+	
+	"\1\s[10]%(username)! Do you like the word %(normiewords)?\w8\p2\s[20]Does that even count as a word...?\w8\n\n[half]Also, maybe %(they) %p('hate','hates') that word. Maybe it reminds %(them) of something bad! How would you know?!\w8\1\n\nBy asking! Besides, I like it, so why wouldn't %(username)?\w8\p2\s[20]\n\nPeople like different things sometimes. This is not a novel concept." //on the other hand this can accidentally imply homophobia.
+
+	"\1\s[10]%(normiewords)... hey, you should write something about that!\w8\p2\s[20]How about we don't."
+	
+	"\0\s[9]I wish I liked people more.\w8\s[0]\nHaving friends seems like it would be fun, but I just can't keep any."
+	
+	"\0\s[3]In the seasons of my mind\nYou and I were found drifting away\nI put your hand in mine\nAnd made you promise to stay\n\n[half]\s[8]......\w8\s[0]\1\s[10]That makes it sound sad. Why do you always do that?\w8\p2\s[20]True artistry must not be questioned.\w8\n\n[half]But also, yeah. Lighten up a little!\w8\0\s[7]\n\nEasy for you to say."
+	
+	"\0\s[5]...Not trying...\w9\w9\n\n[half]...make things eas'er on myself..." //eliding the 'ier'. I've seen hymns do this but I can't actually think of any examples...
+	
+	"\0\s[9]I don't really like summer, but I don't really like any of the seasons. Summer's just when everything \f[italic,1]happens\f[italic,default], y'know?\w8\s[3]\n\n[half]Except for winterguard, anyways. That's for... winter. And spring." //god forbid i not talk about GUARD loml rn
+	
+	"\0\s[3]...So what / if I don't pick it up in the end..."
+	
+	"\1\s[10]%(username)! listen to this:\n\n[half]%(normiewords)\nI think about all the time\nThe power in the word so sublime\nAnd if I'm ever feeling blue\nI'll think of that, and %(normiewords) too!\w8\w9\n\n[half]...so, what do you think?\w8\p2\s[20]I think nobody should ever subject themselves to that again. Rhyming isn't everything, you know.\w8\0\s[1]...Don't be so rude to each other.\n...\n\n[half]\s[3]It's not the end-all-be-all, but knowing how to do it right can take you far.\w8\0\s[0]\n\n...Normie's just getting a head-start." //when u have to be the voice of reason to ur 'voice' of 'reason'
+	
+	"\0\s[9]I think I'm normal a lot, but then I go outside and like, see actual normal people.\w8\s[0]\n\n[half]It's kind of weird. I don't have half the problems everyone assumes I do.\w8\nBut a lot of other people who act like me \f[italic,1]do\f[italic,default], so it's... not an unreasonable assumption, I guess?\w8\n\n[half]\s[6]I still don't like it."
+	
+	"\p2\s[20]\b4I will now begin a dramatic reading.\w8\n\n[half]%(uniwords): it's strange\nI keep turning it over in my head\nSuch a thing to exist: how? What for?\n\n[half]Perhaps a foil to life itself\nOr put on last night's left-overs\nDo I understand the earth's true nature?\nIs it just a common bother?\n\n[half]In my head, I devise:\nA plan, at last\nTo be wise\n\n[half]Like the rotisseries at the store\nIt's in my head forevermore\x[noclear]\0\s[5]\1\s[10]5 stars! I love it! You're so good at this!!!\w8\0\s[2]\p2\s[20]\n\nYou will be impressed by anything.\n\n[half]...but, perhaps in this case it's warranted.\w8\0\s[5]\p1\s[10]\n\nYippie!!!" //make fun of normie all you want but YOURE NOT BETTER
+	//... its me, expiredshark. i'm the one writing these. this is as far as my skill goes.
+	
+	"\0\s[3]...I put a lot of myself into my work.\w8\s[9]\nNot that you would know, really, but still.\w8\n\s[0]I find it hard not to. It's probably why I don't write very often.\w9\w9\s[3]\n\n[half]I try to push myself towards the metaphorical side of things anyways. Sometimes you need a change in perspective - and who's to say what's literal after that?\w8\p2\s[20]I do NOT recommend writing like that. %(username), don't get any ideas."
+	
+	"\0\s[0]\1\s[10]%(username)! I'm making you a friendship bracelet!\w8\p2\s[20]...You don't even know %(their) favorite color.\w8\1\n\nWell, then, what's your favorite color? I'll make you more!\w8\p2\n\nNot what I meant by that."
+	
+	"\p2\s[20]%(username). Watch this:\n\n[half]\w8%(magiceffect)" //actually, I couldn't think of anything.
+	
+	"\1\s[10]%(username)! Favorite color?\n\n[half]\_q\![set,autoscroll,disable]\*\__q[OnFavColor,red]Red\__q\n\__q[OnFavColor,orange]Orange\__q\n\__q[OnFavColor,lemon yellow]Lemon Yellow\__q\n\__q[OnFavColor,avocado green]Avocado Green\__q\n\__q[OnFavColor,ink blue]Ink Blue\__q\n\__q[OnFavColor,hydrangea purple]Hydrangea Purple\__q\n\__q[OnFavColor,pink]Pink\__q\n\n\n\n\__q[OnFavColor,fbred]Fresh blood Red\__q"
+	
+	"\1\s[10]%(username)! Can we make cookies? Pleaaaaaaaaaaaaaaaaase????\w8\p2\s[20]You know we're not allowed to use the kitchen.\w8\1\n\nBut... cookies!\w8\p2\s[20]\n\n%(username) also knows we're not allowed to use the kitchen." //wow who'd've thought we had a setting. I don't even know what it technically IS
+	
+	"\1\s[10]%(username)! Do you want to play a game?\n\_q\*\__q[OnAitalkGame]Yes\__q\n\__q[OnAitalkGameRefuse]No\__q"
+}
+
+OnRps {
+	if reference0 == "rock"
+	{
+		"\0\s[2]\1\s[10]A wise choice! Easy to smash your enemies!\w8\0\s[7]\p2\s[20]That's not how you play the game."
+	}
+	elseif reference0 == "paper"
+	{
+		"\0\s[8]\1\s[10]Interesting... do you make it do the wibbly noise?\w8\0\s[7]\p2That would be \f[italic,1]laminated\f[italic,default] paper. \0\s[0]\p2%(username) probably doesn't, anyways."
+	}
+	elseif reference0 == "scissors"
+	{
+		"\0\s[6]\1\s[10]A good choice! Lots of things can be stabbed, particulaurly your enemies.\w8\0\s[4]\p2I don't think %(username) wanted %(their) choice \f[italic,1]evaluated\f[italic,default]."
+	}
+}
+
+OnFavColor
+{
+	if reference0 == "fbred"
+	{
+		"\0\s[6]\1\s[10]...Well, that \f[italic,1]is\f[italic,default] a color!\w8\nI wouldn't say it's my favorite, though..."
+	}
+	else 
+	{
+		"\1\s[10]%(reference0)? Cool! I like that color, too!\w8\p2\s[20]You like all the colors."
+	}
+}
+
+OnAitalkGame : all
+{
+	OnPlayWordGuess
+	//i wanted to actually code something, but then I couldn't think of anything.
+}
+
+OnAitalkGameRefuse
+{
+	"\1\s[10]Oh, okay... Well you can always talk to me if you change your mind!"
+}

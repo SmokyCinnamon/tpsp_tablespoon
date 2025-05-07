@@ -1,0 +1,238 @@
+version,1
+//—————————————————————————————— Kero surfaces ——————————————————————————————
+
+surface10
+{
+	collision0,0,0,130,65,head
+	
+	animation0.interval,runonce
+	animation0.pattern0,overlay,103,0,0,0
+
+	//blink
+	animation1.interval,random,4
+	animation1.pattern0,stop,0
+	animation1.pattern1,overlay,104,0,0,0
+	animation1.pattern2,overlay,105,50,0,0
+	animation1.pattern3,overlay,104,100,0,0
+	animation1.pattern4,overlay,-1,30,0,0
+	animation1.pattern5,start,0
+	
+	
+	//talk
+	animation2.interval,talk,4
+	animation2.pattern0,alternativestart,(3,4,5)
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,102,0,0,0
+	animation3.pattern1,overlay,101,100,0,0
+	animation3.pattern2,overlay,-1,100,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,100,0,0,0
+	animation4.pattern1,overlay,-1,200,0,0
+	
+	animation5.interval,never
+	animation5.pattern0,overlay,101,0,0,0
+	animation5.pattern1,overlay,100,100,0,0
+	animation5.pattern2,overlay,-1,100,0,0
+}
+
+//normie bow
+surface106
+{
+	element0,overlay,normie_bow_blue.png,0,0
+	element1,overlay,normie_bow_outline.png,0,0
+}
+surface107
+{
+	element0,overlay,normie_bow_pink.png,0,0
+	element1,overlay,normie_bow_outline.png,0,0
+}
+surface108
+{
+	element0,overlay,normie_bow_red.png,0,0
+	element1,overlay,normie_bow_outline.png,0,0
+}
+surface109
+{
+	element0,overlay,normie_bow_white.png,0,0
+	element1,overlay,normie_bow_outline.png,0,0
+}
+//gap for outline
+
+//buttbow
+surface111
+{
+	element0,overlay,normie_buttbow_blue.png,0,0
+	element1,overlay,normie_buttbow_outline.png,0,0
+}
+surface112
+{
+	element0,overlay,normie_buttbow_pink.png,0,0
+	element1,overlay,normie_buttbow_outline.png,0,0
+}
+surface113
+{
+	element0,overlay,normie_buttbow_red.png,0,0
+	element1,overlay,normie_buttbow_outline.png,0,0
+}
+surface114
+{
+	element0,overlay,normie_buttbow_white.png,0,0
+	element1,overlay,normie_buttbow_outline.png,0,0
+}
+
+//tie
+surface116
+{
+	element0,overlay,normie_tie_blue.png,0,0
+	element1,overlay,normie_tie_outline.png,0,0
+}
+surface117
+{
+	element0,overlay,normie_tie_pink.png,0,0
+	element1,overlay,normie_tie_outline.png,0,0
+}
+surface118
+{
+	element0,overlay,normie_tie_red.png,0,0
+	element1,overlay,normie_tie_outline.png,0,0
+}
+surface119
+{
+	element0,overlay,normie_tie_white.png,0,0
+	element1,overlay,normie_tie_outline.png,0,0
+}
+
+surface.append10
+{
+	//bow - bprw
+	animation6.interval,bind
+	animation6.pattern0,overlay,106,0,0,0
+	animation7.interval,bind
+	animation7.pattern0,overlay,107,0,0,0
+	animation8.interval,bind
+	animation8.pattern0,overlay,108,0,0,0
+	animation9.interval,bind
+	animation9.pattern0,overlay,109,0,0,0
+	//buttbow
+	animation11.interval,bind
+	animation11.pattern0,overlay,111,0,0,0
+	animation12.interval,bind
+	animation12.pattern0,overlay,112,0,0,0
+	animation13.interval,bind
+	animation13.pattern0,overlay,113,0,0,0
+	animation14.interval,bind
+	animation14.pattern0,overlay,114,0,0,0
+	//tie
+	animation16.interval,bind
+	animation16.pattern0,overlay,116,0,0,0
+	animation17.interval,bind
+	animation17.pattern0,overlay,117,0,0,0
+	animation18.interval,bind
+	animation18.pattern0,overlay,118,0,0,0
+	animation19.interval,bind
+	animation19.pattern0,overlay,119,0,0,0
+}
+
+surface20
+{
+	collision0,0,0,130,65,head
+	
+	animation0.interval,runonce
+	animation0.pattern0,overlay,203,0,0,0
+
+	//blink
+	animation1.interval,random,4
+	animation1.pattern0,stop,0
+	animation1.pattern1,overlay,204,0,0,0
+	animation1.pattern2,overlay,205,50,0,0
+	animation1.pattern3,overlay,204,175,0,0
+	animation1.pattern4,overlay,-1,30,0,0
+	animation1.pattern5,start,0
+	
+	
+	//talk
+	animation2.interval,talk,4
+	animation2.pattern0,alternativestart,(3,4,5)
+	
+	animation3.interval,never
+	animation3.pattern0,overlay,201,0,0,0
+	animation3.pattern1,overlay,200,100,0,0
+	animation3.pattern2,overlay,-1,100,0,0
+	
+	animation4.interval,never
+	animation4.pattern0,overlay,201,0,0,0
+	animation4.pattern1,overlay,-1,100,0,0
+	
+	animation5.interval,never
+	animation5.pattern0,overlay,202,0,0,0
+	animation5.pattern1,overlay,200,100,0,0
+	animation5.pattern2,overlay,-1,100,0,0
+}
+
+//uni buttbow
+surface206
+{
+	element0,overlay,uni_buttbow_greenish.png,0,0
+	element1,overlay,uni_buttbow_outline.png,0,0
+}
+surface207
+{
+	element0,overlay,uni_buttbow_pink.png,0,0
+	element1,overlay,uni_buttbow_outline.png,0,0
+}
+surface208
+{
+	element0,overlay,uni_buttbow_white.png,0,0
+	element1,overlay,uni_buttbow_outline.png,0,0
+}
+surface209
+{
+	element0,overlay,uni_buttbow_yellow.png,0,0
+	element1,overlay,uni_buttbow_outline.png,0,0
+}
+
+//uni tie
+surface211
+{
+	element0,overlay,uni_tie_greenish.png,0,0
+	element1,overlay,uni_tie_outline.png,0,0
+}
+surface212
+{
+	element0,overlay,uni_tie_pink.png,0,0
+	element1,overlay,uni_tie_outline.png,0,0
+}
+surface213
+{
+	element0,overlay,uni_tie_white.png,0,0
+	element1,overlay,uni_tie_outline.png,0,0
+}
+surface214
+{
+	element0,overlay,uni_tie_yellow.png,0,0
+	element1,overlay,uni_tie_outline.png,0,0
+}
+
+surface.append20
+{
+	//buttbow - gpwy
+	animation6.interval,bind
+	animation6.pattern0,overlay,206,0,0,0
+	animation7.interval,bind
+	animation7.pattern0,overlay,207,0,0,0
+	animation8.interval,bind
+	animation8.pattern0,overlay,208,0,0,0
+	animation9.interval,bind
+	animation9.pattern0,overlay,209,0,0,0
+	//tie
+	animation11.interval,bind
+	animation11.pattern0,overlay,211,0,0,0
+	animation12.interval,bind
+	animation12.pattern0,overlay,212,0,0,0
+	animation13.interval,bind
+	animation13.pattern0,overlay,213,0,0,0
+	animation14.interval,bind
+	animation14.pattern0,overlay,214,0,0,0
+}

@@ -1,0 +1,76 @@
+//Separate from the menus because you could put other interactions here, like poking or booping or punching or asking about various hotspots
+OnMouseDoubleClick
+{
+	if reference5 == 0 //reference5 is the mouse button being clicked, in this case a left click
+	{
+		//reference3 is which character is being clicked
+		//If you want to add double click interactions, reference4 will be the name of the hitbox the mouse is over
+		if reference3 == 0
+		{
+			OnSakuraMenu
+		}
+		elseif reference3 == 1
+		{
+			OnKeroMenu
+		}
+		elseif reference3 == 2
+		{
+			OnP2Menu
+		}
+	}
+}
+
+OnMouseMove
+{
+	if reference4 != ""
+	{
+		stroke++
+		
+		if stroke % 40 == 0
+		{
+			if reference3 == 0; OnMouseMove.Sakura
+			elseif reference3 == 1; OnMouseMove.Kero
+			elseif reference3 ==2; OnMouseMove.P2
+		}
+	}
+}
+
+OnMouseMove.Sakura
+{
+	if reference4 == "head"
+	{
+		"\0\s[4]..."
+	}
+}
+
+//these might read better as sequential?
+OnMouseMove.Kero
+{
+	"\1\s[10]%(username)! Giver of pets!"
+	"\1\s[10]%(username)! Why thank you!"
+	"\1\s[10]%(username)! The pet master!\w8\p2\s[20]That's a weird title. You're fucking weird.\w8\1\s[10]\n\nPar for the course!"
+	"\1\s[10]%(username)! I love attention!\w8\p2\s[20]So............ honest."
+	"\1\s[10]%(username)! Another pet please?"
+	"\1\s[10]%(username)! You're so nice!"
+	"\1\s[10]%(username)! ...I humbly request more pets?\w8\p2\s[20]Not better."
+	"\1\s[10]%(username)! I love you!\w8\p2\s[20]That's too forward of you. You sound clingy."
+	"\1\s[10]%(username)! We're best friends!\w8\p2\s[20]I will literally pay you money to stop talking."
+}
+
+OnMouseMove.P2
+{
+	"\p2\s[20]This is degrading. What am I, a \f[italic,1]pet?\f[italic,default]\w8\1\s[10]Actually we kind of are...\w8\p2\n\nShut up!!!"
+	"\p2\s[20]If you must pet someone, pet normie. For god's sake.\w8\1\s[10]Yeah! Pet me!\w8\n...What does god have to do with it, though?"
+	"\p2\s[20]Unhand me. This is not an enjoyable experience.\w8\1\s[10]It's a new experience! So maybe you just don't know yet?\8\p2\n\nYour optimism fails to convince me of anything."
+	"\p2\s[20]Do I \f[italic,1]look\f[italic,default] like I eat oats?"
+	"\p2\s[20]This will not endear you to me, %(username). Normie, on the other hand...\w8\1\s[10]Yes? You said my name?"
+	"\p2\s[20]...\w9\w9\w9\n\nStop petting me like some kind of animal.\w8\1\s[10]You're a horse!\w8\p2\n\nI'm a \f[italic,1]unicorn\f[italic,default]. There's a difference.\w8\1\n\nOh. What's the difference?\w8\p2\n\nI refuse to entertain this any longer.\w8\1\n\nWow... that's an insightful difference!\w8\p2\n\nUGH."
+	"\p2\s[20]You must spend a lot of time petting horses.\w8\1\s[10]%(username)! Pet me! Pet me!\w8\p2\n\n...And if you didn't before, you'll have to now."
+	"\p2\s[20]Unicorns actually have a long tradition of not being pet.\w8\1\s[10]Oh! Really? Tell me more!\w8\p2\n\nNo."
+	"\p2\s[20]...\w9\w9\w9\n\nFine. Pet me if you must."
+}
+
+OnMouseLeaveAll
+{
+	stroke = 0
+}

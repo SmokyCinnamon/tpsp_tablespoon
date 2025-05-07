@@ -1,0 +1,70 @@
+//i really did want to use kawari (mesomeso) but everything about the menu file setup is SO WEIRD and i dont like it at all.
+//if there were simplicity template kawari maybe i could make it work. (obviously biased)
+
+//character premise: tv head with two horse plushies, one of which is a unicorn. yeah that'll get me places.
+//story premise/still character premise: ?
+
+//stupid realization now it's been a few days: this is just my angel/devil cats & me.
+
+
+OnFirstBoot : all
+{
+	stroke = 0
+	LastTalk = ""
+	names = tempname
+	pronouns = tempnouns
+	pluralnouns = 0
+	//the real username and pronoun calls are in other.dic. temp name+nouns are in menu_sakura.dic
+	
+	"\p[2]\s[20]\1\s[10]\0\s[0]"; --
+	"......\x[noclear]\p[2]Oh, someone told you to come over here again, didn't they? Well we don't accept visitors. Go away.\x[noclear]\1Do you want to be friends? I want to be friends!\x[noclear]\p[2]\n\nNo, that's-\w8\n...\w8\nFine. Introductions, then:\x"
+	"\n\n\1\s[10]hey. I'm normie. the normal horse. I do normal horse things like eat oats.\x"
+	"\p[2]\s[20]um. I'm the unicorn. I can do magic. I didn't animate normie, though.\x"
+	"\0\s[0]......\w9\w9\w9\nThis is the main character, your blank slate. Projection is discouraged, your thoughts in disarray.\x[noclear]\n..................\w9\w9\w9\nI don't have friends, so those two talk to me instead. You can do that, too."
+}
+
+OnInitialize
+{
+	//If you want some variables to reset on boot, put them here. This event will happen even if you add other events like OnGhostChanged
+	//OnInitialize is a NOTIFY event! That means it cannot return scripts. This event is only meant for things like variable changes. See this page on Ukadoc for more info: https://ukagakadreamteam.github.io/ukadoc/manual/spec_shiori3.html
+	
+	//If you add new variables in updates, I recommend initializing them like so:
+	//if !ISVAR("NewVariable"); NewVariable = 0
+	//This means that it will only set the new variable if the user doesn't already have it, so that their variables don't get overwritten
+	
+	if reference0 != "reload" //For things you want to reset EXCEPT when just reloading; a convenience for you the dev, basically
+	{
+		LastTalk = ""
+	}
+}
+
+//nonoverlap doesnt do anything i just want to count them.
+OnBoot : nonoverlap
+{
+	"\p[2]\s[20]\1\s[10]\0\s[0]"
+	--
+	"\0\s[9]Oh, hello."
+	"\1%(username)! What if we all got into one big cuddle pile?\w8\p[2]What if we didn't."
+	"\p[2]You've returned. Okay."
+	"\p[2]It's you. Wow.\w8\1%(username)! I missed you!\w8\p[2]\n\nDon't tell people that. You'll sound clingy."
+	"\1%(username)! My best friend!\w8\p[2]We don't \f[italic,1]have\f[italic,default] any friends."
+	"\0\s[9]...\w8\p[2]You have been acknowleged. Continue."
+	"\0\s[9]...\w8\1%(username)! You're here!\w8\p[2]Don't start any parties."
+	"\p[2]Oh. Why are \f[italic,1]you\f[italic,default] here?\w8\1There's no reason to talk to %(username) like that... I'm glad %(username) is here again!"
+	"\p[2]Oh. It's you. Who keeps putting you up to this?\w8\0\s[3]...\nDon't be so rude."
+}
+
+OnClose : nonoverlap
+{
+	"\0\s[0]...Oh. You're leaving."
+	"\p[2]Bye, %(username). Don't tell anyone we talked."
+	"\1\s[10]%(username)! Leaving already? Do you have work to do? Can I come watch?\w8\0\s[0]...No."
+	"\p[2]\s[20]Okay, see you. I was getting bored anyways.\w8\1\s[10]Hey! You can't just \f[italic,1]say\f[default] that to people!\w8\0\s[3]......\nDon't fight."
+	"\p[2]On-again-see."
+	"\p[2]I salute you.\w8\0\s[8]Why...?"
+	"\1\s[10]%(username)! Have a great day, okay?!"
+	"\1\s[10]You're leaving? Well, when are you going to come back?! I'll miss you!\w8\p[2]\s[20]Don't be so co-dependent."
+	"\1\s[10]%(username)! Come back real soon, okay?!\w8\p[2]\s[20]Don't say that. You sound desparate."
+	--
+	"\w9\w9\w9\-"
+}

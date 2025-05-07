@@ -1,0 +1,344 @@
+version,1
+
+//numbering starts at 260
+//ends at 299
+
+surface.append121,124,127,130,133,136,139,142,145,148
+{
+	//shortsock - oyrbb
+	animation2.interval,bind
+	animation2.pattern0,overlay,260,0,0,0
+	animation3.interval,bind
+	animation3.pattern0,overlay,261,0,0,0
+	animation4.interval,bind
+	animation4.pattern0,overlay,262,0,0,0
+	animation5.interval,bind
+	animation5.pattern0,overlay,263,0,0,0
+	animation6.interval,bind
+	animation6.pattern0,overlay,264,0,0,0
+	//longsock
+	animation7.interval,bind
+	animation7.pattern0,overlay,265,0,0,0
+	animation8.interval,bind
+	animation8.pattern0,overlay,266,0,0,0
+	animation9.interval,bind
+	animation9.pattern0,overlay,267,0,0,0
+	animation10.interval,bind
+	animation10.pattern0,overlay,268,0,0,0
+	animation11.interval,bind
+	animation11.pattern0,overlay,269,0,0,0
+	//shoes
+	animation12.interval,bind
+	animation12.pattern0,overlay,270,0,0,0
+	animation13.interval,bind
+	animation13.pattern0,overlay,271,0,0,0
+	animation14.interval,bind
+	animation14.pattern0,overlay,272,0,0,0
+	animation15.interval,bind
+	animation15.pattern0,overlay,273,0,0,0
+	animation16.interval,bind
+	animation16.pattern0,overlay,274,0,0,0
+	//shorts
+	animation17.interval,bind
+	animation17.pattern0,overlay,275,0,0,0
+	animation18.interval,bind
+	animation18.pattern0,overlay,276,0,0,0
+	animation19.interval,bind
+	animation19.pattern0,overlay,277,0,0,0
+	animation20.interval,bind
+	animation20.pattern0,overlay,278,0,0,0
+	animation21.interval,bind
+	animation21.pattern0,overlay,279,0,0,0
+	//pants
+	animation22.interval,bind
+	animation22.pattern0,overlay,280,0,0,0
+	animation23.interval,bind
+	animation23.pattern0,overlay,281,0,0,0
+	animation24.interval,bind
+	animation24.pattern0,overlay,282,0,0,0
+	animation25.interval,bind
+	animation25.pattern0,overlay,283,0,0,0
+	animation26.interval,bind
+	animation26.pattern0,overlay,284,0,0,0
+	//shirt
+	animation27.interval,bind
+	animation27.pattern0,overlay,285,0,0,0
+	animation28.interval,bind
+	animation28.pattern0,overlay,286,0,0,0
+	animation29.interval,bind
+	animation29.pattern0,overlay,287,0,0,0
+	animation30.interval,bind
+	animation30.pattern0,overlay,288,0,0,0
+	animation31.interval,bind
+	animation31.pattern0,overlay,289,0,0,0
+	//business
+	animation32.interval,bind
+	animation32.pattern0,overlay,290,0,0,0
+	animation33.interval,bind
+	animation33.pattern0,overlay,291,0,0,0
+	animation34.interval,bind
+	animation34.pattern0,overlay,292,0,0,0
+	animation35.interval,bind
+	animation35.pattern0,overlay,293,0,0,0
+	animation36.interval,bind
+	animation36.pattern0,overlay,294,0,0,0
+	//hoodie
+	animation37.interval,bind
+	animation37.pattern0,overlay,295,0,0,0
+	animation38.interval,bind
+	animation38.pattern0,overlay,296,0,0,0
+	animation39.interval,bind
+	animation39.pattern0,overlay,297,0,0,0
+	animation40.interval,bind
+	animation40.pattern0,overlay,298,0,0,0
+	animation41.interval,bind
+	animation41.pattern0,overlay,299,0,0,0
+}
+
+//shortsock
+surface260
+{
+	element0,overlay,f3_shortsock_color.png,0,0
+	element1,overlay,f3_shortsock_outline.png,0,0
+}
+surface261
+{
+	element0,overlay,f3_shortsock_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_shortsock_outline.png,0,0
+}
+surface262
+{
+	element0,overlay,f3_shortsock_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_shortsock_outline.png,0,0
+}
+surface263
+{
+	element0,overlay,f3_shortsock_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_shortsock_outline.png,0,0
+}
+surface264
+{
+	element0,overlay,f3_shortsock_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_shortsock_outline.png,0,0
+}
+
+//longsock
+surface265
+{
+	element0,overlay,f3_longsock_color.png,0,0
+	element1,overlay,f3_longsock_outline.png,0,0
+}
+surface266
+{
+	element0,overlay,f3_longsock_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_longsock_outline.png,0,0
+}
+surface267
+{
+	element0,overlay,f3_longsock_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_longsock_outline.png,0,0
+}
+surface268
+{
+	element0,overlay,f3_longsock_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_longsock_outline.png,0,0
+}
+surface269
+{
+	element0,overlay,f3_longsock_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_longsock_outline.png,0,0
+}
+
+//shoes
+surface270
+{
+	element0,overlay,f3_shoes_color.png,0,0
+	element1,overlay,f3_shoes_outline.png,0,0
+}
+surface271
+{
+	element0,overlay,f3_shoes_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_shoes_outline.png,0,0
+}
+surface272
+{
+	element0,overlay,f3_shoes_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_shoes_outline.png,0,0
+}
+surface273
+{
+	element0,overlay,f3_shoes_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_shoes_outline.png,0,0
+}
+surface274
+{
+	element0,overlay,f3_shoes_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_shoes_outline.png,0,0
+}
+
+//shorts
+surface275
+{
+	element0,overlay,f3_shorts_color.png,0,0
+	element1,overlay,f3_shorts_outline.png,0,0
+}
+surface276
+{
+	element0,overlay,f3_shorts_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_shorts_outline.png,0,0
+}
+surface277
+{
+	element0,overlay,f3_shorts_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_shorts_outline.png,0,0
+}
+surface278
+{
+	element0,overlay,f3_shorts_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_shorts_outline.png,0,0
+}
+surface279
+{
+	element0,overlay,f3_shorts_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_shorts_outline.png,0,0
+}
+
+//pants
+surface280
+{
+	element0,overlay,f3_pants_color.png,0,0
+	element1,overlay,f3_pants_outline.png,0,0
+}
+surface281
+{
+	element0,overlay,f3_pants_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_pants_outline.png,0,0
+}
+surface282
+{
+	element0,overlay,f3_pants_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_pants_outline.png,0,0
+}
+surface283
+{
+	element0,overlay,f3_pants_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_pants_outline.png,0,0
+}
+surface284
+{
+	element0,overlay,f3_pants_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_pants_outline.png,0,0
+}
+
+//shirt
+surface285
+{
+	element0,overlay,f3_shirt_color.png,0,0
+	element1,overlay,f3_shirt_outline.png,0,0
+}
+surface286
+{
+	element0,overlay,f3_shirt_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_shirt_outline.png,0,0
+}
+surface287
+{
+	element0,overlay,f3_shirt_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_shirt_outline.png,0,0
+}
+surface288
+{
+	element0,overlay,f3_shirt_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_shirt_outline.png,0,0
+}
+surface289
+{
+	element0,overlay,f3_shirt_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_shirt_outline.png,0,0
+}
+
+//business
+surface290
+{
+	element0,overlay,f3_business_color.png,0,0
+	element1,overlay,f3_business_outline.png,0,0
+}
+surface291
+{
+	element0,overlay,f3_business_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_business_outline.png,0,0
+}
+surface292
+{
+	element0,overlay,f3_business_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_business_outline.png,0,0
+}
+surface293
+{
+	element0,overlay,f3_business_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_business_outline.png,0,0
+}
+surface294
+{
+	element0,overlay,f3_business_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_business_outline.png,0,0
+}
+
+//hoodie
+surface295
+{
+	element0,overlay,f3_hoodie_color.png,0,0
+	element1,overlay,f3_hoodie_outline.png,0,0
+}
+surface296
+{
+	element0,overlay,f3_hoodie_color.png,0,0
+	element1,overlayfast,yellow.png,0,0
+	element2,overlay,f3_hoodie_outline.png,0,0
+}
+surface297
+{
+	element0,overlay,f3_hoodie_color.png,0,0
+	element1,overlayfast,red.png,0,0
+	element2,overlay,f3_hoodie_outline.png,0,0
+}
+surface298
+{
+	element0,overlay,f3_hoodie_color.png,0,0
+	element1,overlayfast,deepblue.png,0,0
+	element2,overlay,f3_hoodie_outline.png,0,0
+}
+surface299
+{
+	element0,overlay,f3_hoodie_color.png,0,0
+	element1,overlayfast,darkblue.png,0,0
+	element2,overlay,f3_hoodie_outline.png,0,0
+}

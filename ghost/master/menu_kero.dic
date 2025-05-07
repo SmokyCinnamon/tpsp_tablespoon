@@ -1,0 +1,138 @@
+KeroMenuGreetings : nonoverlap
+{
+	"\1%(username)! Hi!"
+	"\1%(username)! My best friend! What can I do?"
+	"\1%(username)! I got a whole buncha games!"
+}
+//this ghost is just name affirmer 3000
+
+//Because there is an all modifier here, you don't need to write -- between menu options
+OnKeroMenu : all
+{
+	"\1\b2\![set,autoscroll,disable]"
+	if SHIORI3FW.Eventid == "OnMouseDoubleClick"; KeroMenuGreetings //The check here is so they won't comment if you click the back button. Remove if you prefer
+	"\n\n\_q"
+	"%*\__q[OnPlayWordGuess]I want to play the guessing game\__q\n"
+	"%*\__q[OnPlayWordAssociates]I want to play word association\__q\n"
+	"\n[half]"
+	"%*\__q[OnWaffleSound]What sound does a waffle make?\__q\n"
+	"%*\__q[OnFavWordNormie]What's your favorite word?\__q\n"
+	
+	"\n%*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnPlayWordGuess : all
+{
+	if !reference0
+	{
+		wordguess = ANY(normiewords)
+		_words = ("%(wordguess)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)") //array of random words from normie
+		_words = ARRAYDEDUP(_words) //remove duplicates
+		_words = ASORT('string,ascending',_words) //sort the words in alphebetical order
+		"\1\b4\*\![set,autoscroll,disable]Ok! Here we go! Guess the word I'm thinking of!"
+		"\n\n[half]\_q"
+		foreach _words; _word {
+			"%*\__q[OnPlayWordGuess,%(_word)]%(_word)\__q\n"
+		}
+		"\n\n"
+	}
+	else
+	{
+		if reference0 == wordguess
+		{
+			"\1\b2That is correct! I \f[italic,1]was\f[italic,default] thinking of %(reference0)! Isn't this so fun? Let's keep playing!"
+		}
+		else
+		{
+			"\1\b2No! No way was I thinking of %(reference0)! It was \f[italic,1]%(wordguess)\f[italic,default]! Guess better next time, %(username). Guess better."
+		}
+		ERASEVAR(wordguess)
+		ERASEVAR(words)
+		"\_q\n\n%*\__q[OnPlayWordGuess]Play Again\__q\n"
+	}
+	"%*\__q[OnKeroMenu]Back to main menu\__q\n"
+	"%*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnPlayWordAssociates : all
+{
+	_firstguess = ''
+	_words = ("%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)","%(normiewords)") //array of random words from normie
+	_words = ARRAYDEDUP(_words) //remove duplicates
+	_words = ASORT('string,ascending',_words) //sort the words in alphebetical order
+	"\1\s[10]\b4\*\![set,autoscroll,disable]"
+	if !reference0
+	{
+		_firstguess = "%(normiewords)"
+		"Ok! Here we go! What word do you associate with %(_firstguess)?!"
+	}
+	else
+	{
+		_firstguess = reference0
+		if reference0 == "a cold knife" && reference1 == "a cold knife"
+		{
+			"\0\s[6]\1The only thing you associate %(reference1) with is itself? Okay. \0\s[4]Can a tool never outlive it's purpose?\w8\1Well, you're supposed to pick a different word. What \f[italic,1]else\f[italic,default] do you associate with %(reference0)?"
+		}
+		elseif reference0 == "a cold knife"
+		{
+			"\0\s[9]\1...So, %(reference1) and %(reference0)? \0\s[0]\1Interesting. What do you associate with %(reference0)?"
+		}
+		elseif reference1 == "a cold knife"
+		{
+			"\0\s[9]\1...I see. %(reference1) reminds you of %(reference0). \0\s[6]\1And %(reference0) then reminds you of...?"
+		}
+		else
+		{
+			"%(reference1) and %(reference0), huh? Me too! Now what do you associate with \f[italic,1]that\f[italic,default] word?"
+		}
+	}
+	"\n\n[half]\_q"
+	foreach _words; _word
+	{
+		"%*\__q[OnPlayWordAssociates,%(_word),%(_firstguess)]%(_word)\__q\n"
+	}
+	"\n\n[half]"
+	"%*\__q[OnKeroMenu]Back to main menu\__q\n"
+	"%*\__q[blank]Nevermind\__q"
+	"\_q"
+}
+
+OnWaffleSound
+{
+	"\1\s[10]\b2\f[italic,1]\f[color,disable]\_qWhat sound does a waffle make?\_q\f[color,default]\f[italic,default]\n\n[half]"
+	--
+	
+	"%(normiewords)!\w8\n\n[half]...At least, I think so?"
+	
+	"Not the sound of oats!"
+	
+	"Is this the start of a joke? What's the rest?! Tell me! Tell me %(username) now I wanna know!"
+	
+	"Crunch crunch." //add cronch after masquerade
+	
+	"Cronch cronch."
+	
+	"The sound of %(normiewords) with %(normiewords)!"
+	
+	"Nothing except for when you accidentally knock it on the floor!"
+	
+	--
+	"\n\n[half]\_q%*\__q[OnKeroMenu]Back to main menu\__q\n%*\__q[blank]Nevermind\__q\_q"
+}
+
+OnFavWordNormie //question courtesty of freshStripeyCurtains
+{
+	"\1\s[10]\b2\f[italic,1]\f[color,disable]\_qWhat's your favorite word?\_q\f[color,default]\f[italic,default]\n\n[half]"
+	--
+	
+	"There's so many it's hard to choose! But I think %(normiewords) is a good one!"
+	
+	"Hmm...... %(normiewords)! It's one of the best ones out there!"
+	
+	"I like all words equally!\n...but, %(normiewords) is a good one."
+	
+	--
+	"\n\n[half]\_q%*\__q[OnKeroMenu]Back to main menu\__q\n%*\__q[blank]Nevermind\__q\_q"
+}
