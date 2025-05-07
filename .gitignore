@@ -1,0 +1,7 @@
+shell/master/profile/
+ghost/master/profile/
+
+shell/master/profile/*
+ghost/master/profile/*
+
+ghost/master/yaya_variable.cfg
